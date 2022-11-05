@@ -10,6 +10,10 @@ app.use(json());
 
 app.use("/", routes);
 
+app.get('/moedels/flight', function(req, res){
+  res.send('what time is your flight')
+})
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
