@@ -7,7 +7,9 @@ router.get('/', controller.getAllFlight)
 
 router.post("/", controller.bookFlight);
 
-router.get("/:name", controller.getMyFlight);
+router.get("/:id", controller.getMyFlight);
+
+router.put("/:id", controller.updateFlight);
 
 module.exports = router;
 

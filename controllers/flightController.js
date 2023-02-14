@@ -46,9 +46,9 @@ exports.bookFlight = async (req, res) => {
 
 // get single user
 exports.getMyFlight = async (req, res) => {
-    const name = req.params.name
+    const id = req.params.id
     try {
-        const foundUser = await users.findById(name);
+        const foundUser = await users.findById(id);
         res.status(200).json({
             success: true,
             message: "User found",
@@ -61,6 +61,23 @@ exports.getMyFlight = async (req, res) => {
         })
     }
 }
-// exports.getMyFlight = (req, res) => {
-//     res.send("see my flight")
-// }
+
+// update a booked flight
+exports.updateFlight = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const updateFlight = await users.findByIdAndUpdate(id,
+            { $set: req.body },
+            { new: true });
+        res.status(200).json({
+            success: "true",
+            message: "flight updated successful",
+            data: updateFlight
+        })
+    } catch (error) {
+        res.status(404).json({
+            success: false,
+            message: "cannot update flight",
+        })
+    }
+}
