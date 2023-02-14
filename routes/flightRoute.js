@@ -7,7 +7,7 @@ router.get('/', controller.getAllFlight)
 
 router.post("/", controller.bookFlight);
 
-router.get("/:UserFlight", controller.getMyFlight);
+router.get("/:name", controller.getMyFlight);
 
 module.exports = router;
 
