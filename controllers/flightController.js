@@ -1,16 +1,15 @@
 const users = require("../models/Flight")
 
-
 // get all user
 exports.getAllFlight = async (req, res) => {
     try {
         const foundUsers = await users.find({});
-        res.status(200).json({
-            success: true,
-            count: foundUsers.length,
-            message: "All booked flight found",
-            data: foundUsers
-        })
+            res.status(200).json({
+                success: true,
+                count: foundUsers.length,
+                message: "All booked flight found",
+                data: foundUsers
+            })
     } catch (err) {
         res.status(404).json({
             success: false,
