@@ -1,4 +1,3 @@
-// exports.exampleModel = [];
 const { Schema, model} = require("mongoose")
 
 const flightUserSchema =  Schema({

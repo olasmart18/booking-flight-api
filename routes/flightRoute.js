@@ -11,5 +11,8 @@ router.get("/:id", controller.getMyFlight);
 
 router.put("/:id", controller.updateFlight);
 
-module.exports = router;
+router.delete("/", controller.deleteFlight);
 
+router.delete("/:id", controller.deleteMyFlight);
+
+module.exports = router;
